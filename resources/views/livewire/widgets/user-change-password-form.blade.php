@@ -6,16 +6,16 @@
 
       <p class="text-secondary">{{ __('Ensure your account is using a long, random password to stay secure.') }}</p>
 
-        <form method="post" action="{{ route('password.update') }}" class="mt-6 space-y-6">
+        <form wire:submit="save" class="mt-6 space-y-6">
             @csrf
-            @method('put')
 
-            <x-form-input :label="__('Current Password')" name="current_password" type="password" placeholder="Enter current password"  autocomplete="current-password" :errors="$errors->updatePassword->get('current_password')" />
-            <x-form-input :label="__('New Password')" name="password" type="password" placeholder="Enter new password"  autocomplete="new-password" :errors="$errors->updatePassword->get('password')" />
-            <x-form-input :label="__('Confirm Password')" name="password_confirmation" type="password" placeholder="Confirm new password"  autocomplete="new-password" :errors="$errors->updatePassword->get('password_confirmation')" />
+            <x-form-input wire:model="current_password" :label="__('Current Password')" name="current_password" type="password" placeholder="Enter current password" autocomplete="current-password" required />
+            <x-form-input wire:model="password" :label="__('New Password')" name="password" type="password" placeholder="Enter new password"  autocomplete="new-password" required />
+            <x-form-input wire:model="password_confirmation" :label="__('Confirm Password')" name="password_confirmation" type="password" placeholder="Confirm new password" autocomplete="new-password" required />
 
             <button type="submit" class="btn btn-primary">{{ __('Save') }}</button>
 
+            {{-- TODO: replace this with a global notification or something better --}}
             @if (session('status') === 'password-updated')
                 <span
                     x-data="{ show: true }"

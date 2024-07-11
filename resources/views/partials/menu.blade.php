@@ -22,7 +22,7 @@
                     </div>
                 </a>
                 <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                    <a href="{{ route('profile.edit') }}" class="dropdown-item {{ Route::is('profile.edit') ? 'active' : '' }}">{{ __('Profile') }}</a>
+                    <a href="{{ route('settings') }}" class="dropdown-item {{ Route::is('settings') ? 'active' : '' }}">{{ __('Settings') }}</a>
 
                     <form method="POST" action="{{ route('logout') }}">
                         @csrf

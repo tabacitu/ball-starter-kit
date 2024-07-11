@@ -9,7 +9,9 @@
 @endphp
 
 <div class="mb-3">
-    <label class="form-label" for="{{ $attributes['id'] }}">{{  $attributes['label'] ?? ucfirst($attributes['name']) }}</label>
+    @unless ($attributes['type'] === 'hidden')
+    <label class="form-label text-capitalize {{ $attributes['required'] ? 'required':'' }}" for="{{ $attributes['id'] }}">{{  $attributes['label'] ?? ucfirst($attributes['name']) }}</label>
+    @endunless
     <input {{ $attributes }} />
 
     @if (count($errors))

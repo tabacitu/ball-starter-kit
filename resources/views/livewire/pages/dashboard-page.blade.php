@@ -1,4 +1,4 @@
-<x-app-layout>
+<div>
     <x-slot name="header">
         <div class="col">
             <h2 class="page-title">
@@ -19,4 +19,4 @@
         </div>
     </div>
 
-</x-app-layout>
+</div>
