@@ -6,7 +6,7 @@ use App\Models\User;
 use Illuminate\Validation\Rule;
 use Livewire\Component;
 
-class UserProfileForm extends Component
+class AccountInformationForm extends Component
 {
     public User $user;
     public string $name;
@@ -56,7 +56,7 @@ class UserProfileForm extends Component
 
     public function render()
     {
-        return view('livewire.widgets.user-profile-form', [
+        return view('livewire.widgets.account-information-form', [
             'user' => $this->user,
         ]);
     }

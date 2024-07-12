@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use Livewire\Component;
 
-class UserDeleteForm extends Component
+class AccountDeleteForm extends Component
 {
     public $password = '';
 
@@ -32,6 +32,6 @@ class UserDeleteForm extends Component
 
     public function render()
     {
-        return view('livewire.widgets.user-delete-form');
+        return view('livewire.widgets.account-delete-form');
     }
 }

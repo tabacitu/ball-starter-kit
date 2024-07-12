@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules\Password;
 use Livewire\Component;
 
-class UserChangePasswordForm extends Component
+class AccountChangePasswordForm extends Component
 {
     public string $current_password = '';
     public string $password = '';
@@ -29,6 +29,6 @@ class UserChangePasswordForm extends Component
 
     public function render()
     {
-        return view('livewire.widgets.user-change-password-form');
+        return view('livewire.widgets.account-change-password-form');
     }
 }
