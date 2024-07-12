@@ -1,4 +1,4 @@
-<x-guest-layout>
+<login-page>
 
     <div class="container container-tight py-4">
 
@@ -10,16 +10,16 @@
             <div class="card-body">
                 <h2 class="h2 text-center mb-4">{{  __('Login') }}</h2>
 
-                <form method="POST" action="{{ route('login') }}">
+                <form wire:submit="save">
                     @csrf
 
-                    <x-form-input :label="__('Email Address')" name="email" type="email" placeholder="your@email.com" required autofocus autocomplete="username" />
-                    <x-form-input :label="__('Password')" name="password" type="password" placeholder="Your password" required autocomplete="current-password" />
+                    <x-form-input wire:model="email" :label="__('Email Address')" name="email" type="email" placeholder="your@email.com" required autofocus autocomplete="username" />
+                    <x-form-input wire:model="password" :label="__('Password')" name="password" type="password" placeholder="Your password" required autocomplete="current-password" />
 
                     <div class="mb-1">
                         <div class="d-flex justify-content-between align-items-center">
                             <label class="form-check mb-0">
-                                <input type="checkbox" class="form-check-input" name="remember">
+                                <input wire:model="remember" type="checkbox" class="form-check-input" name="remember">
                                 <span class="form-check-label">{{ __('Remember me') }}</span>
                             </label>
 
@@ -44,4 +44,4 @@
         @endif
     </div>
 
-</x-guest-layout>
+</login-page>

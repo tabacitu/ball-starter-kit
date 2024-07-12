@@ -1,4 +1,4 @@
-<x-guest-layout>
+<forgot-password-page>
 
     <div class="container container-tight py-4">
 
@@ -12,10 +12,10 @@
 
                 <p class="text-secondary mb-4">{{ __('No problem. Just let us know your email address and we will email you a link to reset your password.') }}</p>
 
-                <form method="POST" action="{{ route('password.email') }}">
+                <form wire:submit="save">
                     @csrf
 
-                    <x-form-input :label="__('Email Address')" name="email" type="email" placeholder="Enter email" required autofocus autocomplete="username" />
+                    <x-form-input wire:model="email" :label="__('Email Address')" name="email" type="email" placeholder="Enter email" required autofocus autocomplete="username" />
 
                     <div class="form-footer">
                         <button type="submit" class="btn btn-primary w-100">{{ __('Email Password Reset Link') }}</button>
@@ -30,4 +30,4 @@
         </div>
         @endif
     </div>
-</x-guest-layout>
+</forgot-password-page>

@@ -1,4 +1,4 @@
-<x-guest-layout>
+<verify-email-page>
 
     <div class="container container-tight py-4">
 
@@ -12,7 +12,7 @@
 
                 <p class="text-secondary mb-4">{{ __('Please verify your email address, by clicking on the link we just emailed to you. If you didn\'t receive the email, we will gladly send you another.') }}</p>
 
-                <form method="POST" action="{{ route('verification.send') }}">
+                <form wire:submit="send">
                     @csrf
 
                     <div class="form-footer">
@@ -35,4 +35,4 @@
         @endif
 
     </div>
-</x-guest-layout>
+</verify-email-page>
