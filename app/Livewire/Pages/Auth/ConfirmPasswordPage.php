@@ -4,7 +4,9 @@ namespace App\Livewire\Pages\Auth;
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\ValidationException;
+use Livewire\Attributes\Title;
 
+#[Title('Confirm Password')]
 class ConfirmPasswordPage extends AuthComponent
 {
     protected string $view = 'livewire.pages.auth.confirm-password-page';

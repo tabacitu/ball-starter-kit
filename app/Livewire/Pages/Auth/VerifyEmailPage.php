@@ -6,7 +6,9 @@ use Illuminate\Auth\Events\Verified;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\RateLimiter;
+use Livewire\Attributes\Title;
 
+#[Title('Verify Email')]
 class VerifyEmailPage extends AuthComponent
 {
     protected string $view = 'livewire.pages.auth.verify-email-page';

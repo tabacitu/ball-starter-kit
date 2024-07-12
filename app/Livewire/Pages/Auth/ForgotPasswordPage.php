@@ -5,7 +5,9 @@ namespace App\Livewire\Pages\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Password;
 use Illuminate\Validation\ValidationException;
+use Livewire\Attributes\Title;
 
+#[Title('Forgot Password')]
 class ForgotPasswordPage extends AuthComponent
 {
     protected string $view = 'livewire.pages.auth.forgot-password-page';

@@ -8,7 +8,9 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Password;
 use Illuminate\Support\Str;
 use Illuminate\Validation\ValidationException;
+use Livewire\Attributes\Title;
 
+#[Title('Reset Password')]
 class ResetPasswordPage extends AuthComponent
 {
     protected string $view = 'livewire.pages.auth.reset-password-page';

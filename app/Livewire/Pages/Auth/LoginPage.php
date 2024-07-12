@@ -5,7 +5,9 @@ namespace App\Livewire\Pages\Auth;
 use App\Http\Requests\Auth\LoginRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Livewire\Attributes\Title;
 
+#[Title('Login')]
 class LoginPage extends AuthComponent
 {
     protected string $view = 'livewire.pages.auth.login-page';

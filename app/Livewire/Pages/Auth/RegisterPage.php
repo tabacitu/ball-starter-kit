@@ -7,7 +7,9 @@ use Illuminate\Auth\Events\Registered;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules\Password;
+use Livewire\Attributes\Title;
 
+#[Title('Register')]
 class RegisterPage extends AuthComponent
 {
     protected string $view = 'livewire.pages.auth.register-page';
