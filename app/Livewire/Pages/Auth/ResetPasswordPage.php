@@ -20,7 +20,7 @@ class ResetPasswordPage extends AuthComponent
     public string $password = '';
     public string $password_confirmation = '';
 
-    public function mount(Request $request)
+    public function mount(Request $request): void
     {
         $this->token = $request->token;
         $this->email = $request->email;

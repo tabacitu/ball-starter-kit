@@ -20,7 +20,7 @@ class AuthComponent extends Component
      * The render method for the component.
      * Uses a default layout for guest pages.
      */
-    public function render()
+    public function render(): \Illuminate\Contracts\View\View
     {
         return view($this->view)->layout('layouts.guest');
     }

@@ -34,7 +34,7 @@ class SettingsPage extends Component
         $this->currentSectionLivewireComponent = $this->sections[$section]['livewireComponent'];
     }
 
-    public function render()
+    public function render(): \Illuminate\Contracts\View\View
     {
         return view('livewire.pages.settings-page');
     }
