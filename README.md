@@ -21,13 +21,13 @@ Key differences from Laravel Breeze & Laravel Jetstream:
 - 🚧 provides blade components for forms, tables, modals, etc;
 - 🚧 has clear docs on how to build on top of it;
 
-It's something that we've built to _scratch our own itch_ (pun intended) when creating new Laravel SaaS projects from scratch (_another_ pun intended). We've made it public because there's nothing online that fixes the problem in a way we like, and we believe this can help other people save a lot of time and headache. If you use and like this project, please [open an issue](https://github.com/Laravel-Backpack/app-starter/issues) and tell us about it, the good and the bad - we love to know we helped.
+It's something that we've built to _scratch our own itch_, because we need to create many new Laravel SaaS projects _from scratch_ (puns very much intended). We've made it public because there's nothing online that fixes the problem in a way we like, and we believe this can help other people save a lot of time and headache. If you use and like this project, please [open an issue](https://github.com/Laravel-Backpack/app-starter/issues) and tell us about it, the good and the bad - we love to know we helped.
 
 ## Usage
 
 Right now the project is a full Laravel 11 installation. So you can install it as you would any Laravel project: 
 
-1. Clone the repository `git clone https://github.com/Laravel-Backpack/scratch-app-starter.git your-project-name`
+1. Clone the repository `git clone https://github.com/tabacitu/scratch-app-starter.git your-project-name`
 2. Go inside the project folder `cd your-project-name`.
 3. Run `composer install`.
 4. Customize the `.env` file with your database credentials and other settings.
@@ -64,7 +64,7 @@ The "_best tool for the job_" depends from project to project. And tech choices 
 </details>
 
 <details>
-  <summary><strong>Why an application starter kit from the people who made Backpack?</strong></summary>
+  <summary><strong>Why an application starter kit from the guy who made Backpack?</strong></summary>
 
 When you think "_[Backpack for Laravel](https://backpackforlaravel.com)_" you think "_admin panel_". That's 100% true, that's what our main product [Backpack/CRUD](https://github.com/laravel-backpack/crud) and all its add-ons will do for you. **This package is different. Its goal is NOT to help you build an admin panel. Its goal is to help you build an application** (most likely a SaaS), as fast as possible, from scratch (pun intended).
 
@@ -98,11 +98,11 @@ The package already provides a few tests, for the features it provides. You can 
 
 ## Contributing
 
-If you want to contribute, please read the [CONTRIBUTING.md](CONTRIBUTING.md) file first. We have a limited scope for this project, so if it's a feature, please open an issue and asking, before spending a lot of time creating a PR.
+If you want to contribute, please read the [CONTRIBUTING.md](CONTRIBUTING.md) file first. We have a limited scope for this project, so if it's a feature, please open an issue and ask, before spending a lot of time creating a PR.
 
 ## Security Vulnerabilities
 
-If you discover a security vulnerability, please send an e-mail to Cristian Tabacitu via [cristian.tabacitu@backpackforlaravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+If you discover a security vulnerability, please send an e-mail to Cristian Tabacitu via [cristian.tabacitu@digitallyhappy.com](mailto:cristian.tabacitu@digitallyhappy.com). All security vulnerabilities will be promptly addressed.
 
 ## License
 
