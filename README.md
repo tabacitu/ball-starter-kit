@@ -27,7 +27,7 @@ It's something that we've built to _scratch our own itch_ (pun intended) when cr
 
 Right now the project is a full Laravel 11 installation. So you can install it as you would any Laravel project: 
 
-1. Clone the repository `git clone https://github.com/Laravel-Backpack/app-starter.git your-project-name`
+1. Clone the repository `git clone https://github.com/Laravel-Backpack/scratch-app-starter.git your-project-name`
 2. Go inside the project folder `cd your-project-name`.
 3. Run `composer install`.
 4. Customize the `.env` file with your database credentials and other settings.
