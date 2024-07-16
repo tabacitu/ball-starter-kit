@@ -21,7 +21,7 @@ Key differences from Laravel Breeze & Laravel Jetstream:
 - 🚧 provides blade components for forms, tables, modals, etc;
 - 🚧 has clear docs on how to build on top of it;
 
-It's something that we've built to _scratch our own itch_ (pun intended) when creating new Laravel SaaS projects in 2024. We've made it public because there's nothing online that fixes the problem in a way we like, and we believe this can help other people save a lot of time and headache. If you use and like this project, please [open an issue](https://github.com/Laravel-Backpack/app-starter/issues) and tell us about it, the good and the bad - we love to know we helped.
+It's something that we've built to _scratch our own itch_ (pun intended) when creating new Laravel SaaS projects from scratch (_another_ pun intended). We've made it public because there's nothing online that fixes the problem in a way we like, and we believe this can help other people save a lot of time and headache. If you use and like this project, please [open an issue](https://github.com/Laravel-Backpack/app-starter/issues) and tell us about it, the good and the bad - we love to know we helped.
 
 ## Usage
 
