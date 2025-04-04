@@ -49,7 +49,10 @@ class AuthenticationService
 
         RateLimiter::clear($this->throttleKey($credentials['email'], $ipAddress));
 
-        request()->session()->regenerate();
+        // Only regenerate the session if it's available (not in certain test scenarios)
+        if (request()->hasSession()) {
+            request()->session()->regenerate();
+        }
     }
 
     /**
@@ -194,9 +197,12 @@ class AuthenticationService
      */
     public function verifyEmail(array $params, User $user): bool
     {
-        $verificationRequest = new EmailVerificationRequest($params);
-
         if ($user->hasVerifiedEmail()) {
+            return false;
+        }
+
+        // Check if the hash matches the user's email
+        if (! hash_equals(sha1($user->email), $params['hash'])) {
             return false;
         }
 
