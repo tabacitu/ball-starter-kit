@@ -17,12 +17,12 @@ This project is an application starter kit. It's an alternative to Laravel Breez
 Key differences from Laravel Breeze & Laravel Jetstream:
 - ✅ uses Bootstrap 5 instead of Tailwind CSS;
 - ✅ has a clean, modern, generic design and 300+ HTML components thanks to the [Tabler HTML template](https://tabler.io/preview);
-- 🚧 has all the features of Laravel Jetstream, with the simplicity of Laravel Breeze;
 - ✅ does not use NPM, Webpack, Mix, etc - you can use any JS library you want, or none at all; you can even use assets straight from the CDN both in development and production, and Basset will download and serve them from the same server;
 - 🚧 has a simple, clean, organized codebase, with a lot of comments and explanations (cleanup in views needed);
 - ✅ has clear docs on how to build on top of it;
+- ✅ has a full test suite, that you can add to;
 
-It's something that we've built to _scratch our own itch_, because we need to create many new Laravel SaaS projects _from scratch_ (puns very much intended). We've made it public because there's nothing online that fixes the problem in a way we like, and we believe this can help other people save a lot of time and headache. If you use and like this project, please [open an issue](https://github.com/tabacitu/ball-starter-kit/issues) and tell us about it, the good and the bad - we love to know we helped.
+It's something that we've built to scratch our own itch, because we need to create many new Laravel SaaS projects from scratch. We've made it public because there's nothing online that fixes the problem in a way we like, and we believe this can help other people save a lot of time and headache. If you use and like this project, please [open an issue](https://github.com/tabacitu/ball-starter-kit/issues) and tell us about it, the good and the bad - we love to know we helped.
 
 ## Roadmap
 
@@ -40,6 +40,7 @@ Comprehensive documentation is available in the `/docs` directory:
 - [Features](docs/features.md) - Authentication, account settings, and other built-in features
 - [Customization](docs/customization.md) - How to extend the application with new pages and functionality
 - [Components](docs/components.md) - Reusable components and how to use them
+- [Testing](docs/tests.md) - Test suite structure, tools, and best practices
 
 These documents are designed to become your own project documentation once you start using this starter kit.
 
@@ -145,7 +146,17 @@ Key differences from Backpack/CRUD:
 
 ## Testing
 
-The package already provides a few tests, for the features it provides. You can run them with `phpunit` or `vendor/bin/phpunit`.
+The package already provides a comprehensive test suite for the features it includes. For detailed information about the test structure, tools, and best practices, see the [Testing documentation](docs/tests.md).
+
+You can run the tests with:
+```bash
+php artisan test
+```
+
+Or using PHPUnit directly:
+```bash
+vendor/bin/phpunit
+```
 
 ## Contributing
 
