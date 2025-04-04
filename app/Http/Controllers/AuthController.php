@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 class AuthController extends Controller
 {
     protected AuthenticationService $authService;
+
     protected string $defaultRoute = '/dashboard';
 
     public function __construct(AuthenticationService $authService)
@@ -59,7 +60,6 @@ class AuthController extends Controller
     /**
      * Show the verify email page.
      *
-     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\View\View|\Illuminate\Http\RedirectResponse
      */
     public function verifyEmailNotice(Request $request)
@@ -84,7 +84,6 @@ class AuthController extends Controller
     /**
      * Log the user out of the application.
      *
-     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\RedirectResponse
      */
     public function logout(Request $request)
@@ -97,9 +96,6 @@ class AuthController extends Controller
     /**
      * Mark the authenticated user's email address as verified.
      *
-     * @param  string  $id
-     * @param  string  $hash
-     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\RedirectResponse
      */
     public function verifyEmail(string $id, string $hash, Request $request)

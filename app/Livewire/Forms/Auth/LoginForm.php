@@ -9,7 +9,9 @@ use Livewire\Component;
 class LoginForm extends Component
 {
     public $email = '';
+
     public $password = '';
+
     public $remember = false;
 
     // This can be customized by the parent component

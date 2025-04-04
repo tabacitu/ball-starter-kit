@@ -8,8 +8,11 @@ use Livewire\Component;
 class RegisterForm extends Component
 {
     public $name = '';
+
     public $email = '';
+
     public $password = '';
+
     public $password_confirmation = '';
 
     // This can be customized by the parent component

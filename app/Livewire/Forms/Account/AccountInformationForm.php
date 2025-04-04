@@ -10,7 +10,9 @@ use Livewire\Component;
 class AccountInformationForm extends Component
 {
     public User $user;
+
     public string $name;
+
     public string $email;
 
     protected UserAccountService $userAccountService;

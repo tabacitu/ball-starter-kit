@@ -21,9 +21,6 @@ class AuthenticationService
 {
     /**
      * Validate login credentials.
-     *
-     * @param array $credentials
-     * @return array
      */
     public function validateLoginCredentials(array $credentials): array
     {
@@ -36,17 +33,13 @@ class AuthenticationService
     /**
      * Authenticate a user with the provided credentials.
      *
-     * @param array $credentials
-     * @param bool $remember
-     * @param string|null $ipAddress
-     * @return void
      * @throws ValidationException
      */
     public function authenticate(array $credentials, bool $remember = false, ?string $ipAddress = null): void
     {
         $this->ensureIsNotRateLimited($credentials['email'], $ipAddress);
 
-        if (!Auth::attempt($credentials, $remember)) {
+        if (! Auth::attempt($credentials, $remember)) {
             RateLimiter::hit($this->throttleKey($credentials['email'], $ipAddress));
 
             throw ValidationException::withMessages([
@@ -62,14 +55,11 @@ class AuthenticationService
     /**
      * Ensure the login request is not rate limited.
      *
-     * @param string $email
-     * @param string|null $ipAddress
-     * @return void
      * @throws ValidationException
      */
     protected function ensureIsNotRateLimited(string $email, ?string $ipAddress): void
     {
-        if (!RateLimiter::tooManyAttempts($this->throttleKey($email, $ipAddress), 5)) {
+        if (! RateLimiter::tooManyAttempts($this->throttleKey($email, $ipAddress), 5)) {
             return;
         }
 
@@ -87,22 +77,16 @@ class AuthenticationService
 
     /**
      * Get the rate limiting throttle key for the request.
-     *
-     * @param string $email
-     * @param string|null $ipAddress
-     * @return string
      */
     protected function throttleKey(string $email, ?string $ipAddress): string
     {
         $ip = $ipAddress ?? request()->ip();
+
         return Str::transliterate(Str::lower($email).'|'.$ip);
     }
 
     /**
      * Validate registration data.
-     *
-     * @param array $data
-     * @return array
      */
     public function validateRegistrationData(array $data): array
     {
@@ -115,9 +99,6 @@ class AuthenticationService
 
     /**
      * Register a new user.
-     *
-     * @param array $data
-     * @return User
      */
     public function register(array $data): User
     {
@@ -136,9 +117,6 @@ class AuthenticationService
 
     /**
      * Log in a user.
-     *
-     * @param User $user
-     * @return void
      */
     public function login(User $user): void
     {
@@ -147,9 +125,6 @@ class AuthenticationService
 
     /**
      * Validate password reset request.
-     *
-     * @param array $data
-     * @return array
      */
     public function validatePasswordResetRequest(array $data): array
     {
@@ -160,9 +135,6 @@ class AuthenticationService
 
     /**
      * Send a password reset link to the user.
-     *
-     * @param string $email
-     * @return string
      */
     public function sendPasswordResetLink(string $email): string
     {
@@ -171,9 +143,6 @@ class AuthenticationService
 
     /**
      * Validate password reset credentials.
-     *
-     * @param array $data
-     * @return array
      */
     public function validatePasswordReset(array $data): array
     {
@@ -186,9 +155,6 @@ class AuthenticationService
 
     /**
      * Reset the user's password.
-     *
-     * @param array $credentials
-     * @return string
      */
     public function resetPassword(array $credentials): string
     {
@@ -207,9 +173,6 @@ class AuthenticationService
 
     /**
      * Mark the user's email as verified.
-     *
-     * @param User $user
-     * @return bool
      */
     public function markEmailAsVerified(User $user): bool
     {
@@ -219,6 +182,7 @@ class AuthenticationService
 
         if ($user->markEmailAsVerified()) {
             event(new Verified($user));
+
             return true;
         }
 
@@ -227,10 +191,6 @@ class AuthenticationService
 
     /**
      * Verify email with verification request.
-     *
-     * @param array $params
-     * @param User $user
-     * @return bool
      */
     public function verifyEmail(array $params, User $user): bool
     {
@@ -242,6 +202,7 @@ class AuthenticationService
 
         if ($user->markEmailAsVerified()) {
             event(new Verified($user));
+
             return true;
         }
 
@@ -250,9 +211,6 @@ class AuthenticationService
 
     /**
      * Validate password confirmation.
-     *
-     * @param array $data
-     * @return array
      */
     public function validatePasswordConfirmation(array $data): array
     {
@@ -263,10 +221,6 @@ class AuthenticationService
 
     /**
      * Confirm the user's password.
-     *
-     * @param string $email
-     * @param string $password
-     * @return bool
      */
     public function confirmPassword(string $email, string $password): bool
     {
@@ -278,8 +232,6 @@ class AuthenticationService
 
     /**
      * Set the password confirmation timestamp.
-     *
-     * @return void
      */
     public function setPasswordConfirmedTimestamp(): void
     {
@@ -288,9 +240,6 @@ class AuthenticationService
 
     /**
      * Log the user out.
-     *
-     * @param Request $request
-     * @return void
      */
     public function logout(Request $request): void
     {
