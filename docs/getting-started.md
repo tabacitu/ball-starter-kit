@@ -38,7 +38,7 @@ MAIL_HOST=your-smtp-host
 MAIL_PORT=587
 MAIL_USERNAME=your-username
 MAIL_PASSWORD=your-password
-MAIL_ENCRYPTION=tls
+MAIL_SCHEME=tls
 MAIL_FROM_ADDRESS=your-email@example.com
 MAIL_FROM_NAME="${APP_NAME}"
 ```
