@@ -7,16 +7,11 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Validation\Rule;
 use Illuminate\Validation\Rules;
-use Illuminate\Validation\ValidationException;
 
 class UserAccountService
 {
     /**
      * Validate profile update data.
-     *
-     * @param array $data
-     * @param User $user
-     * @return array
      */
     public function validateProfileData(array $data, User $user): array
     {
@@ -28,10 +23,6 @@ class UserAccountService
 
     /**
      * Update a user's profile information.
-     *
-     * @param User $user
-     * @param array $data
-     * @return User
      */
     public function updateProfile(User $user, array $data): User
     {
@@ -51,9 +42,6 @@ class UserAccountService
 
     /**
      * Validate password change data.
-     *
-     * @param array $data
-     * @return array
      */
     public function validatePasswordChange(array $data): array
     {
@@ -65,10 +53,6 @@ class UserAccountService
 
     /**
      * Change a user's password.
-     *
-     * @param User $user
-     * @param array $data
-     * @return bool
      */
     public function changePassword(User $user, array $data): bool
     {
@@ -83,9 +67,6 @@ class UserAccountService
 
     /**
      * Validate account deletion.
-     *
-     * @param array $data
-     * @return array
      */
     public function validateAccountDeletion(array $data): array
     {
@@ -96,10 +77,6 @@ class UserAccountService
 
     /**
      * Delete a user's account.
-     *
-     * @param User $user
-     * @param array $data
-     * @return bool
      */
     public function deleteAccount(User $user, array $data): bool
     {
@@ -110,11 +87,6 @@ class UserAccountService
 
     /**
      * Send a verification email to the user.
-     *
-     * @param User $user
-     * @param string $userId
-     * @param int $perMinute
-     * @return bool
      */
     public function sendVerificationEmail(User $user, string $userId, int $perMinute = 5): bool
     {
@@ -125,8 +97,9 @@ class UserAccountService
         return RateLimiter::attempt(
             'send-verify-email-notification:'.$userId,
             $perMinute,
-            function() use ($user) {
+            function () use ($user) {
                 $user->sendEmailVerificationNotification();
+
                 return true;
             }
         );

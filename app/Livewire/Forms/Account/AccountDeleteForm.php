@@ -5,7 +5,6 @@ namespace App\Livewire\Forms\Account;
 use App\Services\AuthenticationService;
 use App\Services\UserAccountService;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 
 class AccountDeleteForm extends Component
@@ -13,6 +12,7 @@ class AccountDeleteForm extends Component
     public $password = '';
 
     protected UserAccountService $userAccountService;
+
     protected AuthenticationService $authService;
 
     public function boot(UserAccountService $userAccountService, AuthenticationService $authService)

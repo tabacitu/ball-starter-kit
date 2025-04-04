@@ -9,7 +9,9 @@ use Livewire\Component;
 class AccountChangePasswordForm extends Component
 {
     public string $current_password = '';
+
     public string $password = '';
+
     public string $password_confirmation = '';
 
     protected UserAccountService $userAccountService;

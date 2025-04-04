@@ -13,6 +13,7 @@ class VerifyEmailForm extends Component
     public $redirectTo = '/dashboard';
 
     protected AuthenticationService $authService;
+
     protected UserAccountService $userAccountService;
 
     public function boot(AuthenticationService $authService, UserAccountService $userAccountService)

@@ -9,8 +9,11 @@ use Livewire\Component;
 class ResetPasswordForm extends Component
 {
     public $token;
+
     public $email = '';
+
     public $password = '';
+
     public $password_confirmation = '';
 
     // This can be customized by the parent component
@@ -42,6 +45,7 @@ class ResetPasswordForm extends Component
         // If the password was successfully reset, redirect to the login page with a status message
         if ($status === Password::PASSWORD_RESET) {
             session()->flash('status', __($status));
+
             return redirect($this->redirectTo);
         }
 
