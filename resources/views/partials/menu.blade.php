@@ -22,7 +22,7 @@
                     </div>
                 </a>
                 <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                    <a href="{{ route('settings') }}" class="dropdown-item {{ Route::is('settings') ? 'active' : '' }}">{{ __('Settings') }}</a>
+                    <a href="{{ route('account.settings') }}" class="dropdown-item {{ Route::is('account.settings') ? 'active' : '' }}">{{ __('Account Settings') }}</a>
 
                     <form method="POST" action="{{ route('logout') }}">
                         @csrf

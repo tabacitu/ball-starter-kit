@@ -48,5 +48,6 @@
 
 @stack('modals')
 @include('partials.scripts')
+@stack('scripts')
 
 </html>

@@ -1,4 +1,4 @@
-<h1 align="center"><a href="https://laravel.com" target="_blank">Backpack App Starter</a></h1>
+<h1 align="center"><a href="https://laravel.com" target="_blank">BALL Starter Kit</a></h1>
 
 <p align="center">
 <a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
@@ -7,18 +7,20 @@
 
 // TODO: screenshot or GIF here
 
-## About 
+## About
 
 This project is an application starter kit that uses the BALL stack (Bootstrap, Any-javascript-library-you-want, Laravel, Livewire). It's an alternative to Laravel Breeze and Laravel Jetstream. It provides the same features they do (auth, profile management, etc) with a simpler tech stack, fewer dependencies and better code organization (arguably).
 
-Key differences from Laravel Breeze & Laravel Jetstream: 
+Key differences from Laravel Breeze & Laravel Jetstream:
 - ✅ uses Bootstrap 5 instead of Tailwind CSS;
 - ✅ does not use NPM, Webpack, Mix, etc - you can use any JS library you want, or none at all;
 - ✅ has a clean, modern, generic design and 300+ HTML components thanks to the [Tabler HTML template](https://tabler.io/preview);
 - 🚧 has all the features of Laravel Jetstream, with the simplicity of Laravel Breeze;
 - ✅ provides blade components for forms, tables, modals, etc;
 - 🚧 has a simple, clean, organized codebase, with a lot of comments and explanations;
-- 🚧 has clear docs on how to build on top of it;
+- ✅ has clear docs on how to build on top of it;
+- 🚧 has a standardized views organization and structure;
+- 🚧 loads the CSS and JS dependencies straight from CDNs, by leveraging Basset - which brings all the convenience of working with CDNs without the downsides, since it downloads and serves the assets directly from your server;
 
 Key differences from Backpack/CRUD:
 - Backpack is a library (a Composer package), AppStarter is Laravel installation (for now).
@@ -28,6 +30,36 @@ Key differences from Backpack/CRUD:
 - Backpack has a lot of dependencies, AppStarter has very few.
 - Backpack is easier to customize than any other admin panel, but AppStarter is even easier to customize - every file is 100% in your control and you can do whatever you want to it.
 - AppStarter is not an alternative to [Backpack/CRUD](https://github.com/laravel-backpack/crud) - you can use both in the same project. Use AppStarter to create your customer-facing application (that will probably end up super custom), and Backpack/CRUD to create your admin panel (that will probably end up with a lot of the same features as other admin panels).
+
+## Roadmap
+
+If you'd like to see any of these features implemented in future versions, please open an issue:
+
+- Example marketing pages
+- Team/organization support
+
+## Documentation
+
+Comprehensive documentation is available in the `/docs` directory:
+
+- [Getting Started](docs/getting-started.md) - Installation, configuration, and first steps
+- [Architecture](docs/architecture.md) - BALL stack, directory structure, and design patterns
+- [Features](docs/features.md) - Authentication, account settings, and other built-in features
+- [Customization](docs/customization.md) - How to extend the application with new pages and functionality
+- [Components](docs/components.md) - Reusable components and how to use them
+
+These documents are designed to become your own project documentation once you start using this starter kit.
+
+### Asset Management
+
+The starter kit loads Tabler CSS and JS files from CDNs for development convenience, but uses [Basset](https://github.com/blade-ui-kit/basset) to internalize these assets for production. This approach:
+
+- Provides the convenience of working with CDNs during development
+- Protects your application from privacy/GDPR issues in production
+- Ensures your application works even if the CDNs are down
+- Improves load times by serving assets from your own server
+
+To use Basset for your own assets, see the [Basset documentation](https://github.com/blade-ui-kit/basset).
 
 # Usage
 

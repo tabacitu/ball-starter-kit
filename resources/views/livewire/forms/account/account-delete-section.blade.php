@@ -9,7 +9,7 @@
     @push('modals')
         <div class="modal" id="confirm-user-deletion" tabindex="-1">
           <div class="modal-dialog modal-sm" role="document">
-              @livewire('widgets.account-delete-form')
+              @livewire('forms.account.account-delete-form')
           </div>
         </div>
     @endpush
