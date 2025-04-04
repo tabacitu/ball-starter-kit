@@ -1,12 +1,24 @@
 {
-    "name": "laravel/laravel",
+    "name": "tabacitu/ball-starter-kit",
     "type": "project",
-    "description": "The skeleton application for the Laravel framework.",
+    "description": "A Laravel starter kit using the BALL stack - Bootstrap, Any-JS, Laravel, Livewire.",
     "keywords": [
         "laravel",
-        "framework"
+        "framework",
+        "starter-kit",
+        "bootstrap",
+        "livewire",
+        "ball-stack"
     ],
     "license": "MIT",
+    "authors": [
+        {
+            "name": "Cristian Tabacitu",
+            "email": "cristian.tabacitu@digitallyhappy.com",
+            "homepage": "https://tabacitu.ro",
+            "role": "Developer"
+        }
+    ],
     "require": {
         "php": "^8.2",
         "laravel/framework": "^12.7",

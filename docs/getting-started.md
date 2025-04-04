@@ -9,13 +9,34 @@ This document will help you get started with your new BALL stack application. Th
 
 ## Installation
 
-1. Clone the repository or download it as a ZIP file
-2. Navigate to the project directory
-3. Run `composer install`
-4. Copy `.env.example` to `.env` and configure your database settings
-5. Run `php artisan key:generate`
-6. Run `php artisan migrate`
-7. Start the development server with `php artisan serve`
+You can install the BALL Starter Kit in one of three ways:
+
+### Option 1: Using the Laravel Installer (Recommended)
+
+```bash
+laravel new --using tabacitu/ball-starter-kit your-app-name
+```
+
+### Option 2: Using Composer Create-Project
+
+```bash
+composer create-project tabacitu/ball-starter-kit your-app-name
+```
+
+### Option 3: Cloning the Repository
+
+```bash
+git clone https://github.com/tabacitu/ball-starter-kit.git your-app-name
+cd your-app-name
+composer install
+```
+
+After installation, regardless of the method used:
+
+1. Configure your `.env` file with your database credentials and other settings
+2. Run `php artisan key:generate` (if not already done by the installer)
+3. Run `php artisan migrate`
+4. Start the development server with `php artisan serve`
 
 ## Initial Configuration
 
