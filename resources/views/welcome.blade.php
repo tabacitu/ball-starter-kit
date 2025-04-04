@@ -110,7 +110,7 @@
                 </div>
                 <div class="card-body">
                     <h3 class="card-title">Livewire</h3>
-                    <p class="text-secondary"><i>Optional.</i> If you like Blade templates, you will probably love Laravel Livewire. It will help you make some Blade components "live" without the hassle of writing your own AJAX or JS.</p>
+                    <p class="text-secondary">If you like Blade templates, you will love Laravel Livewire. It will help you make your Blade components "live" without the hassle of writing your own AJAX or JS.</p>
                     <p class="pt-3">
                         <a target="_blank" href="https://livewire.laravel.com/" class="btn btn-link-secondary">
                             Docs
@@ -155,7 +155,7 @@
                 </div>
                 <div class="card-body">
                     <h3 class="card-title">Backpack</h3>
-                    <p class="text-secondary"><i>Optional.</i> If you like this starter kit, you'll probably love our main product, Backpack. It will help you quickly create an admin panel for your app, then easily maintain it over the years.</p>
+                    <p class="text-secondary"><i>Optional.</i> If you like this starter kit, you'll probably love our main product, Backpack. It will help you quickly create an admin panel for your app, then easily maintain it.</p>
                     <p class="pt-3">
                         <a target="_blank" href="https://backpackforlaravel.com/" class="btn btn-link-secondary">
                             Website

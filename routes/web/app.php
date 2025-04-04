@@ -1,12 +1,12 @@
 <?php
 
+use App\Http\Controllers\AccountSettingsController;
 use App\Livewire\Pages\DashboardPage;
-use App\Livewire\Pages\SettingsPage;
 use App\Livewire\Pages\UserListPage;
 use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth')->group(function () {
-    Route::get('settings/{section?}', SettingsPage::class)->name('settings');
+    Route::get('account-settings', [AccountSettingsController::class, 'index'])->name('account.settings');
 });
 
 Route::middleware(['auth', 'verified'])->group(function () {

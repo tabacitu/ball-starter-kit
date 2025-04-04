@@ -2,9 +2,10 @@
     $type = $type ?? 'success';
     $icon = $icon ?? true;
     $dismissible = $dismissible ?? true;
+    $important = $important ?? false;
 @endphp
 
-<div class="alert {{ isset($important) ? 'alert-important' : '' }} alert-{{ $type }} {{ $dismissible ? 'alert-dismissible' : '' }} {{ $class ?? '' }}" role="alert">
+<div class="alert {{ $important ? 'alert-important' : '' }} alert-{{ $type }} {{ $dismissible ? 'alert-dismissible' : '' }} {{ $class ?? '' }}" role="alert">
     <div class="d-flex">
       @if ($icon)
         <div>
@@ -25,7 +26,7 @@
       @endif
       <div>
         @if (isset($title))
-            <h4 class="alert-title">{{ $title }}</h4>
+            <h4 class="alert-title {{ $important ? 'text-white' : '' }}">{{ $title }}</h4>
         @endif
         @if (isset($text))
             <div class="text-secondary">{!! $text !!}</div>
