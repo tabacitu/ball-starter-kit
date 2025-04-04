@@ -16,12 +16,11 @@ This project is an application starter kit. It's an alternative to Laravel Breez
 
 Key differences from Laravel Breeze & Laravel Jetstream:
 - ✅ uses Bootstrap 5 instead of Tailwind CSS;
-- ✅ does not use NPM, Webpack, Mix, etc - you can use any JS library you want, or none at all;
 - ✅ has a clean, modern, generic design and 300+ HTML components thanks to the [Tabler HTML template](https://tabler.io/preview);
 - 🚧 has all the features of Laravel Jetstream, with the simplicity of Laravel Breeze;
+- ✅ does not use NPM, Webpack, Mix, etc - you can use any JS library you want, or none at all; you can even use assets straight from the CDN both in development and production, and Basset will download and serve them from the same server;
 - 🚧 has a simple, clean, organized codebase, with a lot of comments and explanations (cleanup in views needed);
 - ✅ has clear docs on how to build on top of it;
-- 🚧 TODO: load the CSS and JS dependencies straight from CDNs, by leveraging Basset - which brings all the convenience of working with CDNs without the downsides, since it downloads and serves the assets directly from your server;
 
 It's something that we've built to _scratch our own itch_, because we need to create many new Laravel SaaS projects _from scratch_ (puns very much intended). We've made it public because there's nothing online that fixes the problem in a way we like, and we believe this can help other people save a lot of time and headache. If you use and like this project, please [open an issue](https://github.com/tabacitu/ball-starter-kit/issues) and tell us about it, the good and the bad - we love to know we helped.
 

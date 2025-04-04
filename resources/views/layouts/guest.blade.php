@@ -13,18 +13,11 @@
         @stack('styles')
     </head>
 
-    <body class="d-flex flex-column">
+    <body class="">
         <div class="page page-center">
-
-            <!-- Page body -->
-            <div class="page-body">
-
-                <div class="container-xl">
-                    {{ $slot }}
-                </div>
-
+            <div class="{{ $containerClass ?? 'container py-4' }}">
+                {{ $slot }}
             </div>
-
         </div>
 
     </body>

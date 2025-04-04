@@ -1,3 +1,3 @@
- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/core@1.0.0-beta17/dist/css/tabler.min.css">
+ @basset('https://cdn.jsdelivr.net/npm/@tabler/core@1.1.1/dist/css/tabler.min.css')
 
 @stack('styles')
