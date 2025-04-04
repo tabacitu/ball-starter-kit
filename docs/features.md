@@ -10,6 +10,8 @@ The application includes a complete authentication system built with Laravel and
 
 The registration feature allows users to create new accounts.
 
+![Register-Scratch](https://github.com/user-attachments/assets/76b8b109-2653-4763-9fc7-2453d0947175)
+
 **Implementation:**
 - `app/Livewire/Forms/Auth/RegisterForm.php` - Livewire component for the registration form
 - `app/Services/AuthenticationService.php` - Service for handling registration logic
@@ -26,6 +28,8 @@ The registration process:
 
 The login feature allows users to authenticate with their credentials.
 
+![Login-Scratch](https://github.com/user-attachments/assets/dfc751ba-fec1-4f25-900e-e443b13a99ff)
+
 **Implementation:**
 - `app/Livewire/Forms/Auth/LoginForm.php` - Livewire component for the login form
 - `app/Services/AuthenticationService.php` - Service for handling login logic
@@ -40,6 +44,12 @@ The login process includes:
 ### Password Reset
 
 The password reset feature allows users to reset their password if they forget it.
+
+#### Forgot Password
+![Forgot-Password-Scratch](https://github.com/user-attachments/assets/20af60d5-61b4-4b4d-ad3d-06d52ce84fdd)
+
+#### Reset Password
+![Reset-Password-Scratch](https://github.com/user-attachments/assets/3170b2c5-0efd-4820-9e2f-14174b6c94f0)
 
 **Implementation:**
 - `app/Livewire/Forms/Auth/ForgotPasswordForm.php` - Form for requesting password reset
@@ -56,6 +66,8 @@ The password reset flow:
 
 Email verification ensures that users provide valid email addresses.
 
+![Verify-Email-Scratch](https://github.com/user-attachments/assets/56d07f1f-57ae-4796-9d53-a8ffdaed26a3)
+
 **Implementation:**
 - `app/Livewire/Forms/Auth/VerifyEmailForm.php` - Component for the email verification notice
 - `app/Services/AuthenticationService.php` - Service for handling email verification
@@ -70,6 +82,8 @@ The email verification process:
 
 Some sensitive actions require password confirmation for additional security.
 
+![Confirm-Password-Scratch](https://github.com/user-attachments/assets/2fa349f5-1f52-416d-9123-c1ad4c520817)
+
 **Implementation:**
 - `app/Livewire/Forms/Auth/ConfirmPasswordForm.php` - Form for confirming password
 - `app/Services/AuthenticationService.php` - Service for handling password confirmation
@@ -82,6 +96,8 @@ The account settings feature allows users to manage their profile and account.
 
 Users can update their name and email address.
 
+![Settings-ProfileInformation-Scratch](https://github.com/user-attachments/assets/e8f6c5f5-9dcb-49ea-81ae-686384d23308)
+
 **Implementation:**
 - `app/Livewire/Forms/Account/AccountInformationForm.php` - Form for updating profile
 - `app/Services/UserAccountService.php` - Service for handling profile updates
@@ -92,6 +108,8 @@ When a user changes their email address, they need to verify the new email befor
 ### Password Change
 
 Users can change their password.
+
+![Settings-UpdatePassword-Scratch](https://github.com/user-attachments/assets/ba1eee79-2c79-428b-a523-479a933ab7ef)
 
 **Implementation:**
 - `app/Livewire/Forms/Account/AccountChangePasswordForm.php` - Form for changing password
@@ -104,6 +122,8 @@ The password change process requires the current password for security.
 
 Users can delete their account.
 
+![Settings-DeleteAccount-Scratch](https://github.com/user-attachments/assets/3a77f85c-2ef9-4560-98c7-a2b078d8ebc4)
+
 **Implementation:**
 - `app/Livewire/Forms/Account/AccountDeleteForm.php` - Form for account deletion
 - `app/Services/UserAccountService.php` - Service for handling account deletion
@@ -114,6 +134,8 @@ Account deletion requires password confirmation and is irreversible.
 ## Dashboard
 
 The dashboard is a simple page that serves as the main landing page after login.
+
+![Dashboard-Scratch](https://github.com/user-attachments/assets/9987393b-662c-4f1e-9a6b-d63883110ef8)
 
 **Implementation:**
 - `app/Livewire/Pages/DashboardPage.php` - Livewire component for the dashboard
