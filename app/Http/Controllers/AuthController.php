@@ -96,22 +96,23 @@ class AuthController extends Controller
     /**
      * Mark the authenticated user's email address as verified.
      *
+     * @param string $id
+     * @param string $hash
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\RedirectResponse
      */
     public function verifyEmail(string $id, string $hash, Request $request)
     {
-        $input = [
-            'id' => $id,
-            'hash' => $hash,
-            'expires' => $request->expires,
-            'signature' => $request->signature,
-        ];
-
         if ($request->user()->hasVerifiedEmail()) {
             return redirect()->intended($this->defaultRoute.'?verified=1');
         }
 
-        $this->authService->verifyEmail($input, $request->user());
+        $verified = $this->authService->verifyEmail($request, $request->user());
+
+        if (!$verified) {
+            return redirect()->route('verification.notice')
+                ->with('error', 'The verification link is invalid or has expired.');
+        }
 
         return redirect()->intended($this->defaultRoute.'?verified=1');
     }

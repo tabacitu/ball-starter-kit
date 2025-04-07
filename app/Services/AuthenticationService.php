@@ -194,21 +194,30 @@ class AuthenticationService
 
     /**
      * Verify email with verification request.
+     *
+     * @param \Illuminate\Http\Request $request
+     * @param \App\Models\User $user
+     * @return bool
      */
-    public function verifyEmail(array $params, User $user): bool
+    public function verifyEmail(Request $request, User $user): bool
     {
+        // Check if already verified
         if ($user->hasVerifiedEmail()) {
             return false;
         }
 
-        // Check if the hash matches the user's email
-        if (! hash_equals(sha1($user->email), $params['hash'])) {
+        // Validate the signature
+        if (!$request->hasValidSignature()) {
+            return false;
+        }
+
+        // Check if the hash matches the user's email (additional security)
+        if (!hash_equals(sha1($user->email), (string) $request->route('hash'))) {
             return false;
         }
 
         if ($user->markEmailAsVerified()) {
             event(new Verified($user));
-
             return true;
         }
 
