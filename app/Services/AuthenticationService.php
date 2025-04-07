@@ -7,7 +7,6 @@ use Illuminate\Auth\Events\Lockout;
 use Illuminate\Auth\Events\PasswordReset;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Events\Verified;
-use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -21,6 +20,10 @@ class AuthenticationService
 {
     /**
      * Validate login credentials.
+     *
+     * @param array $credentials The credentials to validate (email, password)
+     * @return array The validated credentials
+     * @throws \Illuminate\Validation\ValidationException If validation fails
      */
     public function validateLoginCredentials(array $credentials): array
     {
@@ -33,7 +36,10 @@ class AuthenticationService
     /**
      * Authenticate a user with the provided credentials.
      *
-     * @throws ValidationException
+     * @param array $credentials The credentials to authenticate with (email, password)
+     * @param bool $remember Whether to remember the user
+     * @param string|null $ipAddress The IP address of the request (for rate limiting)
+     * @throws ValidationException If authentication fails or rate limit is exceeded
      */
     public function authenticate(array $credentials, bool $remember = false, ?string $ipAddress = null): void
     {
@@ -58,7 +64,9 @@ class AuthenticationService
     /**
      * Ensure the login request is not rate limited.
      *
-     * @throws ValidationException
+     * @param string $email The email address being used for login
+     * @param string|null $ipAddress The IP address of the request
+     * @throws ValidationException If rate limit is exceeded
      */
     protected function ensureIsNotRateLimited(string $email, ?string $ipAddress): void
     {
@@ -80,6 +88,10 @@ class AuthenticationService
 
     /**
      * Get the rate limiting throttle key for the request.
+     *
+     * @param string $email The email address being used for login
+     * @param string|null $ipAddress The IP address of the request
+     * @return string The throttle key
      */
     protected function throttleKey(string $email, ?string $ipAddress): string
     {
@@ -90,6 +102,10 @@ class AuthenticationService
 
     /**
      * Validate registration data.
+     *
+     * @param array $data The registration data to validate (name, email, password, password_confirmation)
+     * @return array The validated registration data
+     * @throws \Illuminate\Validation\ValidationException If validation fails
      */
     public function validateRegistrationData(array $data): array
     {
@@ -102,6 +118,10 @@ class AuthenticationService
 
     /**
      * Register a new user.
+     *
+     * @param array $data The registration data (name, email, password, password_confirmation)
+     * @return User The newly created user
+     * @throws ValidationException If validation fails
      */
     public function register(array $data): User
     {
@@ -120,6 +140,8 @@ class AuthenticationService
 
     /**
      * Log in a user.
+     *
+     * @param User $user The user to log in
      */
     public function login(User $user): void
     {
@@ -128,6 +150,10 @@ class AuthenticationService
 
     /**
      * Validate password reset request.
+     *
+     * @param array $data The password reset request data to validate (email)
+     * @return array The validated password reset request data
+     * @throws \Illuminate\Validation\ValidationException If validation fails
      */
     public function validatePasswordResetRequest(array $data): array
     {
@@ -138,6 +164,9 @@ class AuthenticationService
 
     /**
      * Send a password reset link to the user.
+     *
+     * @param string $email The email address to send the reset link to
+     * @return string The status message from the Password facade
      */
     public function sendPasswordResetLink(string $email): string
     {
@@ -146,6 +175,10 @@ class AuthenticationService
 
     /**
      * Validate password reset credentials.
+     *
+     * @param array $data The password reset data to validate (token, email, password, password_confirmation)
+     * @return array The validated password reset data
+     * @throws \Illuminate\Validation\ValidationException If validation fails
      */
     public function validatePasswordReset(array $data): array
     {
@@ -158,6 +191,9 @@ class AuthenticationService
 
     /**
      * Reset the user's password.
+     *
+     * @param array $credentials The password reset credentials (token, email, password)
+     * @return string The status message from the Password facade
      */
     public function resetPassword(array $credentials): string
     {
@@ -176,6 +212,9 @@ class AuthenticationService
 
     /**
      * Mark the user's email as verified.
+     *
+     * @param User $user The user to mark as verified
+     * @return bool True if verification was successful, false otherwise
      */
     public function markEmailAsVerified(User $user): bool
     {
@@ -195,9 +234,9 @@ class AuthenticationService
     /**
      * Verify email with verification request.
      *
-     * @param \Illuminate\Http\Request $request
-     * @param \App\Models\User $user
-     * @return bool
+     * @param Request $request The verification request
+     * @param User $user The user to verify
+     * @return bool True if verification was successful, false otherwise
      */
     public function verifyEmail(Request $request, User $user): bool
     {
@@ -226,6 +265,10 @@ class AuthenticationService
 
     /**
      * Validate password confirmation.
+     *
+     * @param array $data The password confirmation data to validate (password)
+     * @return array The validated password confirmation data
+     * @throws \Illuminate\Validation\ValidationException If validation fails
      */
     public function validatePasswordConfirmation(array $data): array
     {
@@ -236,6 +279,10 @@ class AuthenticationService
 
     /**
      * Confirm the user's password.
+     *
+     * @param string $email The user's email
+     * @param string $password The password to confirm
+     * @return bool True if password is valid, false otherwise
      */
     public function confirmPassword(string $email, string $password): bool
     {
@@ -247,6 +294,8 @@ class AuthenticationService
 
     /**
      * Set the password confirmation timestamp.
+     *
+     * @return void
      */
     public function setPasswordConfirmedTimestamp(): void
     {
@@ -255,6 +304,9 @@ class AuthenticationService
 
     /**
      * Log the user out.
+     *
+     * @param Request $request The request instance
+     * @return void
      */
     public function logout(Request $request): void
     {
