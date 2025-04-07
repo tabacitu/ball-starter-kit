@@ -4,8 +4,8 @@
             <div class="col-lg-auto ms-lg-auto">
                 <ul class="list-inline list-inline-dots mb-0">
                     <li class="list-inline-item">
-                        &copy; 2023
-                        <a href="https://tabacitu.ro" class="link-secondary">:DigitallyHappy</a>
+                        &copy; 2025
+                        <a href="https://tabacitu.ro" class="link-secondary">Cristian Tabacitu</a>
                     </li>
                 </ul>
             </div>
