@@ -18,7 +18,7 @@ Key differences from Laravel Breeze & Laravel Jetstream:
 - ✅ uses Bootstrap 5 instead of Tailwind CSS;
 - ✅ has a clean, modern, generic design and 300+ HTML components thanks to the [Tabler HTML template](https://tabler.io/preview);
 - ✅ does not use NPM, Webpack, Mix, etc - you can use any JS library you want, or none at all; you can even use assets straight from the CDN (both in development and production), and Basset will download and serve them from the same server;
-- 🚧 has a simple, clean, organized codebase, with a lot of comments and explanations (cleanup in views needed);
+- ✅ has a simple, organized codebase, with a lot of comments and explanations;
 - ✅ has clear docs on how to build on top of it;
 - ✅ has a full test suite, that you can add to;
 
