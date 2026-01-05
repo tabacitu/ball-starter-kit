@@ -162,6 +162,13 @@ vendor/bin/phpunit
 
 If you want to contribute, please read the [CONTRIBUTING.md](CONTRIBUTING.md) file first. We have a limited scope for this project, so if it's a feature, please open an issue and ask, before spending a lot of time creating a PR.
 
+## Sponsors
+
+Development and maintenance is possible thanks to the companies that are using the BALL Starter kit - companies like:
+- [Backpack for Laravel](https://backpackforlaravel.com) - the longest-living Laravel admin panel, thanks to its future-proof tech stack;
+- [Recurrr.com](https://recurrr.com/) - send recurring emails; automate good business habits, force yourself & others to do the IMPORTANT but NOT URGENT tasks;
+- [POV Tickets](https://povtickets.com) - the most modern event ticketing software in Romania;
+
 ## Security Vulnerabilities
 
 If you discover a security vulnerability, please send an e-mail to Cristian Tabacitu via [cristian.tabacitu@digitallyhappy.com](mailto:cristian.tabacitu@digitallyhappy.com). All security vulnerabilities will be promptly addressed.
